@@ -15,11 +15,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Cache Sonar
-      uses: actions/cache@v2.1.7
-      with:
-        path: |
-          ~/.sonar/cache
+    # - name: Cache Sonar
+    #   uses: actions/cache@v2.1.7
+    #   with:
+    #     path: |
+    #       ~/.sonar/cache
         
     - uses: actions/checkout@v2
     - name: Set up JDK 11
