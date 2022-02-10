@@ -24,7 +24,7 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: mvn -B install -PcodeCoverage
-    - uses: action/upload-artifect@master
+    - uses: actions/upload-artifect@master
       with:
         name: build artifect
         path: |
