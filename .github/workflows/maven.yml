@@ -13,21 +13,26 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
+    container: maven:3.6.3-adoptopenjdk-14
 
     steps:        
     - uses: actions/checkout@v2
-    - name: Set up JDK 11
-      uses: actions/setup-java@v2
-      with:
-        java-version: '14'
-        distribution: 'adopt'
-        cache: maven
+    
     - name: Build with Maven
       run: mvn -B install -PcodeCoverage
-    - uses: actions/upload-artifect@master
-      with:
-        name: build artifect
-        path: |
-          **/target/site/jacoco/jacoco.xml
-          **/target/site/jacoco-aggregate/jacoco.xml
-          **/target/**/*.class
+
+# jobs:
+#   build:
+
+#     runs-on: ubuntu-latest
+
+#     steps:        
+#     - uses: actions/checkout@v2
+#     - name: Set up JDK 11
+#       uses: actions/setup-java@v2
+#       with:
+#         java-version: '14'
+#         distribution: 'adopt'
+#         cache: maven
+#     - name: Build with Maven
+#       run: mvn -B install -PcodeCoverage
